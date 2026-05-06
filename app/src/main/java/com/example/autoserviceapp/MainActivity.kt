@@ -16,5 +16,13 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment)
         binding.bottomNav.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.bottomNav.visibility = if (destination.id == R.id.navigation_splash || destination.id == R.id.navigation_login) {
+                android.view.View.GONE
+            } else {
+                android.view.View.VISIBLE
+            }
+        }
     }
 }
