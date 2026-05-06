@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">AutoServiceAndroid</string>
+    <string name="title_auto">Auto</string>
+    <string name="title_service_part">Service</string>
+    <string name="subtitle_service">Service kendaraan jadi\nlebih mudah</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Daftar Akun</string>
+
+    <!-- Login Screen Strings -->
+    <string name="login_title">Login</string>
+    <string name="login_welcome">Selamat datang kembali!</string>
+    <string name="label_email">Email</string>
+    <string name="hint_email">Masukkan email</string>
+    <string name="label_password">Password</string>
+    <string name="hint_password">Masukkan password</string>
+    <string name="forgot_password">Lupa password?</string>
+    <string name="or_login_with">atau login dengan</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="dont_have_account">Belum punya akun? </string>
+    <string name="register_now">Daftar sekarang</string>
+</resources>
