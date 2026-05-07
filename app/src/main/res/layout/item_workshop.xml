@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clWorkshopItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_white_stroke_rounded"
+    android:padding="12dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvWorkshopImg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivWorkshop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/bg_workshop" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvWorkshopName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        tools:text="Bengkel Sejahtera Motor"
+        android:textColor="@color/text_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/rbWorkshop"
+        app:layout_constraintStart_toEndOf="@id/cvWorkshopImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/tvWorkshopName"
+        app:layout_constraintTop_toBottomOf="@id/tvWorkshopName">
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1.2 km"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="6dp"
+            android:background="@color/border_color" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="4.8"
+            android:textColor="@color/text_dark"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="2dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_star" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        tools:text="Jl. Ahmad Yani No. 12, Jakarta"
+        android:textColor="@color/text_grey"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@id/tvWorkshopName"
+        app:layout_constraintStart_toStartOf="@id/tvWorkshopName"
+        app:layout_constraintTop_toBottomOf="@id/llRating" />
+
+    <RadioButton
+        android:id="@+id/rbWorkshop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:buttonTint="@color/border_color"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

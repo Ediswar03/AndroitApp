@@ -19,4 +19,55 @@
     <string name="facebook">Facebook</string>
     <string name="dont_have_account">Belum punya akun? </string>
     <string name="register_now">Daftar sekarang</string>
+
+    <!-- Dashboard Strings -->
+    <string name="label_location">Lokasi Anda</string>
+    <string name="current_location">Jakarta, Indonesia</string>
+    <string name="hint_search">Cari layanan, bengkel, atau lainnya...</string>
+    <string name="promo_title">Promo Servis\nHemat Hingga 30%</string>
+    <string name="promo_date">Periode 1 - 30 Juni 2024</string>
+    <string name="btn_lihat_promo">Lihat Promo</string>
+    <string name="menu_utama">Menu Utama</string>
+    <string name="menu_booking">Booking Service</string>
+    <string name="menu_bengkel">Cari Bengkel Terdekat</string>
+    <string name="menu_history">Riwayat Service</string>
+    <string name="menu_payment">Pembayaran</string>
+    <string name="menu_promo">Promo</string>
+    <string name="menu_help">Bantuan</string>
+    <string name="bengkel_terdekat">Bengkel Terdekat</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="bengkel_name">Bengkel Sejahtera Motor</string>
+    <string name="bengkel_distance">1.2 km</string>
+    <string name="bengkel_rating">4.8</string>
+    <string name="bengkel_address">Jl. Merdeka No. 123, Jakarta</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_booking">Booking</string>
+    <string name="nav_history">History</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Booking Screen Strings -->
+    <string name="title_booking_service">Booking Service</string>
+    <string name="step_layanan">Layanan</string>
+    <string name="step_waktu">Waktu</string>
+    <string name="step_lokasi">Lokasi</string>
+    <string name="step_konfirmasi">Konfirmasi</string>
+    <string name="label_pilih_kendaraan">Pilih Kendaraan</string>
+    <string name="motor">Motor</string>
+    <string name="mobil">Mobil</string>
+    <string name="label_pilih_layanan">Pilih Layanan</string>
+    <string name="servis_ringan">Servis Ringan</string>
+    <string name="desc_servis_ringan">Pengecekan dan perawatan rutin</string>
+    <string name="price_servis_ringan">Rp 80.000</string>
+    <string name="ganti_oli">Ganti Oli</string>
+    <string name="desc_ganti_oli">Ganti oli mesin</string>
+    <string name="price_ganti_oli">Rp 60.000</string>
+    <string name="tune_up">Tune Up</string>
+    <string name="desc_tune_up">Setel mesin agar lebih optimal</string>
+    <string name="price_tune_up">Rp 120.000</string>
+    <string name="cek_rem">Cek Rem</string>
+    <string name="desc_cek_rem">Pengecekan sistem rem</string>
+    <string name="price_cek_rem">Rp 50.000</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="desc_lainnya">Layanan lainnya</string>
+    <string name="btn_lanjutkan">Lanjutkan</string>
 </resources>

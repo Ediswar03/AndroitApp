@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".BookingActivity">
+
+    <!-- Toolbar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/primary_blue"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/title_booking_service"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Step Indicator -->
+    <LinearLayout
+        android:id="@+id/llSteps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/clToolbar">
+
+        <!-- Step 1 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_step_active"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/step_layanan"
+                android:textColor="@color/accent_blue"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/border_color" />
+
+        <!-- Step 2 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_step_inactive"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/step_waktu"
+                android:textColor="@color/text_grey"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/border_color" />
+
+        <!-- Step 3 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_step_inactive"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/step_lokasi"
+                android:textColor="@color/text_grey"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/border_color" />
+
+        <!-- Step 4 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_step_inactive"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/step_konfirmasi"
+                android:textColor="@color/text_grey"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@id/btnContinue"
+        app:layout_constraintTop_toBottomOf="@id/llSteps">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_pilih_kendaraan"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/btnMotor"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card_selected"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_motor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/motor"
+                        android:textColor="@color/primary_blue"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnMobil"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_mobil" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/mobil"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/label_pilih_layanan"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold" />
+
+            <!-- Service Items List -->
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <!-- Service Item 1 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_card_selected"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvService1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/servis_ringan"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/desc_servis_ringan"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tvPrice1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvService1" />
+
+                    <TextView
+                        android:id="@+id/tvPrice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/price_servis_ringan"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rbService1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/rbService1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Service Item 2 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvService2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ganti_oli"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/desc_ganti_oli"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tvPrice2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvService2" />
+
+                    <TextView
+                        android:id="@+id/tvPrice2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/price_ganti_oli"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rbService2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/rbService2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Service Item 3 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvService3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tune_up"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/desc_tune_up"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tvPrice3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvService3" />
+
+                    <TextView
+                        android:id="@+id/tvPrice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/price_tune_up"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rbService3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/rbService3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Service Item 4 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvService4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cek_rem"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/desc_cek_rem"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tvPrice4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvService4" />
+
+                    <TextView
+                        android:id="@+id/tvPrice4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/price_cek_rem"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rbService4"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/rbService4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Service Item 5 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvService5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lainnya"
+                        android:textColor="@color/text_dark"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/desc_lainnya"
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tvAction5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvService5" />
+
+                    <TextView
+                        android:id="@+id/tvAction5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:text="Lihat semua"
+                        android:textColor="@color/accent_blue"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rbService5"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/rbService5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RadioGroup>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_button_login"
+        android:text="@string/btn_lanjutkan"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

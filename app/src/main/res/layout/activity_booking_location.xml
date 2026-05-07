@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    tools:context=".BookingLocationActivity">
+
+    <!-- Header Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHeader"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/primary_blue"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/title_booking_service"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Progress Steps -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <!-- Step 1 -->
+                <LinearLayout
+                    android:id="@+id/step1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/step2"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_step_inactive"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/accent_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/step_layanan"
+                        android:textColor="@color/text_grey"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/accent_blue"
+                    app:layout_constraintBottom_toBottomOf="@id/step1"
+                    app:layout_constraintEnd_toStartOf="@id/step2"
+                    app:layout_constraintStart_toEndOf="@id/step1"
+                    app:layout_constraintTop_toTopOf="@id/step1"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Step 2 -->
+                <LinearLayout
+                    android:id="@+id/step2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/step3"
+                    app:layout_constraintStart_toEndOf="@id/step1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_step_inactive"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/accent_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/step_waktu"
+                        android:textColor="@color/text_grey"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/accent_blue"
+                    app:layout_constraintBottom_toBottomOf="@id/step2"
+                    app:layout_constraintEnd_toStartOf="@id/step3"
+                    app:layout_constraintStart_toEndOf="@id/step2"
+                    app:layout_constraintTop_toTopOf="@id/step2"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Step 3 -->
+                <LinearLayout
+                    android:id="@+id/step3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/step4"
+                    app:layout_constraintStart_toEndOf="@id/step2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_step_active"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/step_lokasi"
+                        android:textColor="@color/accent_blue"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/border_color"
+                    app:layout_constraintBottom_toBottomOf="@id/step3"
+                    app:layout_constraintEnd_toStartOf="@id/step4"
+                    app:layout_constraintStart_toEndOf="@id/step3"
+                    app:layout_constraintTop_toTopOf="@id/step3"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Step 4 -->
+                <LinearLayout
+                    android:id="@+id/step4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/step3"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_step_inactive"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="@color/text_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/step_konfirmasi"
+                        android:textColor="@color/text_grey"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Pilih Bengkel Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Pilih Bengkel"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvWorkshops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_workshop" />
+
+            <!-- Catatan Tambahan Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Catatan Tambahan (Opsional)"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_rounded"
+                android:padding="12dp">
+
+                <EditText
+                    android:id="@+id/etNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="Tulis catatan atau keluhan kendaraan Anda..."
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:minLines="4"
+                    android:textColor="@color/text_dark"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0/200"
+                    android:textColor="@color/text_grey"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etNotes" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLanjutkan"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_blue_rounded"
+        android:text="@string/btn_lanjutkan"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

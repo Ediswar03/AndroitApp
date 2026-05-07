@@ -25,6 +25,34 @@
             android:name=".LoginActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookingTimeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookingLocationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookingConfirmationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookingDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".HistoryDetailActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
